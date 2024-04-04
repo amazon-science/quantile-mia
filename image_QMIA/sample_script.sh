@@ -2,7 +2,7 @@
 MODEL_DIR=./models/
 DATA_DIR=./data/
 DATASET=cinic10/0_16
-BASE_ARCHICECTURE=cifar-resnet-50
+BASE_ARCHITECTURE=cifar-resnet-50
 QMIA_ARCHITECTURE=facebook/convnext-large-224-22k-1k
 # Train base model
 python train_base.py --dataset=$DATASET --scheduler=step --scheduler_step_gamma=0.2 --scheduler_step_fraction=0.3 --lr=0.1 --weight_decay=5e-4 --batch_size=32 --image_size=32 --architecture=$BASE_ARCHITECTURE --epochs=200 --model_name_prefix=example --model_root=$MODEL_DIR --data_root=$DATA_DIR
